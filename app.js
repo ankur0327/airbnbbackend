@@ -1,5 +1,5 @@
 if(process.env.NODE_ENV != "production") {
-  require('dotenv').config();
+  require("dotenv").config();
 };
 
 
@@ -33,7 +33,7 @@ const upload = multer({ storage});
 
 
 const dbUrl = process.env.ALTASDB_URL;
-// const dbUrl ='mongodb://127.0.0.1:27017/wonderful';
+//  const dbUrl ='mongodb://127.0.0.1:27017/wonderful';
 
 
 
