@@ -28,12 +28,13 @@ const controlarUser = require("./controlars/users.js");
 
 const multer  = require('multer');
 const {storage } =require("./configar.js");
+const { rmSync } = require("fs");
 const upload = multer({ storage});
 
 
 
-const dbUrl = process.env.ALTASDB_URL;
-//  const dbUrl ='mongodb://127.0.0.1:27017/wonderful';
+// const dbUrl = process.env.ALTASDB_URL;
+const dbUrl ='mongodb://127.0.0.1:27017/wonderful';
 
 
 
