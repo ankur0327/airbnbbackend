@@ -28,7 +28,7 @@ const controlarUser = require("./controlars/users.js");
 
 const multer  = require('multer');
 const {storage } =require("./configar.js");
-const { rmSync } = require("fs");
+const { rmSync } = require("fs"); 
 const upload = multer({ storage});
 
 
