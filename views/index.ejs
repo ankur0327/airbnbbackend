@@ -1,53 +1,8 @@
-<% layout("/layouts/boilerplate") %> 
+<!-- <% layout("/layouts/boilerplate") %> 
 
 
-<style>
-   .listing-titals a {
-      text-decoration: none !important;
-   }
-
-
-   #filters {
-    display: flex;
-     flex-wrap: wrap;
-     align-items: center;
-   }
-
-   #filter{
-    text-align: center;
-    opacity: 0.7;
-    margin-right: 2rem;
-    margin-top: 0.5rem;
-
-  }
-    #filter:hover {
-      opacity: 1;
-      cursor: pointer;
-    }
-
-    #filter p{
-      font-size: 0.8rem;
-    }
-
-   .gst{
-      display: none;
-      
-   }
-
-   #tax-togle {
-      border: 1px solid black;
-      height: 3rem;
-      padding: 1rem;
-      border-radius: 1rem;
-      display: flex;
-      align-items: center;
-      margin-left: 2.5rem;
-   }
-  
-</style>
-
-
-
+-->
+<!-- 
   <div id="filters">
     <div id="filter">
        <div><i class="fa-solid fa-fire"></i></div>
@@ -92,18 +47,18 @@
          <label class="form-check-label" for="flexSwitchCheckDefault">Display Total After Tax</label>
        </div>
    
-  </div>
+  </div> -->
 
-  <div class=" row row-cols-lg-3 d-flex justify-content-between align-items-stretch flex-wrap listing-titals">
- <!-- <div class="row row-cols-lg-3 listing-titals">  -->
+
+<div class="row row-cols-2 row-cols-md-3 g-3 listing-titals">
     <% for(listing of allListing) {%>
-      <a href="/listings/<%= listing._id %>">
+      <a href="/listings/<%= listing._id %>" style="text-decoration: none;">
          
         <div class="card card-sel" style=" border: none;">
           <img src="<%= listing.image.url %>" class="card-img-top show-img" alt="listing_image">
           <div class="card-body ">
             <p class="card-text"><b><%= listing.title %> </b><br/>
-               &#8377;&nbsp;<%= listing.price%> /day
+               <%= listing.price%> 
                &nbsp;  <i class="gst"> +18% Gst</i>
             </p>  
            
@@ -115,8 +70,116 @@
       <%  }%>
   
 
-   </div> 
-  
+   </div>  
+   
+
+       
+
+<style>
+  body {
+    background-color: white;
+    color: black;
+    font-family: Arial, sans-serif;
+  }
+
+  /* Section container */
+  .listing-section {
+    margin: 2rem 0;
+    margin-top: 10rem;
+  }
+
+  .listing-section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    margin-left: 10px;
+  }
+
+  /* Horizontal scroll row */
+  .listing-titals {
+    display: flex;
+    overflow-x: auto;
+    margin-top: 10px;
+    /* gap: 15px;
+    padding: 10px; */
+    scroll-behavior: smooth;
+  }
+
+  /* Hide scrollbar */
+  .listing-titals::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Cards */
+  .card-sel {
+    background:white;
+    color:black;
+    border-radius: 10px;
+    flex: 0 0 auto;
+    width: 100%; /* mobile default */
+    transition: transform 0.3s ease;
+  }
+
+  .card-sel:hover {
+    transform: scale(1.05);
+  }
+
+  /* Image style */
+  .card-sel img {
+    width: 100%;
+    height: 380px;
+    border-radius: 20px;
+    object-fit: cover;
+  }
+
+  /* Card text */
+  .card-body {
+    padding: 10px;
+  }
+
+  .card-text {
+    font-size: 0.9rem;
+    color:black;
+    text-decoration: none;
+  }
+
+  .gst {
+    color: #aaa;
+    font-size: 0.75rem;
+  }
+
+  /* Responsive columns */
+  @media (min-width: 768px) {
+    .card-sel {
+      width: 100%; /* 4–5 cards per row for larger screens */
+    }
+  }
+
+ #filters {
+    display: flex;
+     flex-wrap: wrap;
+     align-items: center;
+   }
+
+
+
+   #filter{
+    text-align: center;
+    opacity: 0.7;
+    margin-right: 2rem;
+    margin-top: 0.5rem;
+
+  }
+    #filter:hover {
+      opacity: 1;
+      cursor: pointer;
+    }
+
+    #filter p{
+      font-size: 0.8rem;
+    }
+</style>
+
+
 
   <script>
    let taxswitch = document.getElementById("flexSwitchCheckDefault");
@@ -131,14 +194,3 @@
       }
    });
   </script>
-
-
-
-<!-- 
-    <ul>
-         for(listing of allListing) {%> 
-            <li><a href="/listings/listing._id%>"> listing.title%></a></li>
-            
- 
-        }%> -->
-    
