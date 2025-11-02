@@ -175,7 +175,7 @@ app.use((req, res , next)=>{
 // index rout
 
 app.get("/listings", wrapAsync(controlarListing.index));
-
+app.get("/",wrapAsync(controlarListing.index)) //new change
   
   /// new rout listing
 
