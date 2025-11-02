@@ -16,6 +16,7 @@ module.exports.index = async (req, res)=>{
 module.exports.showListing =  async (req, res)=>{
     let {id} = req.params;
     const listing = await Listing.findById(id).populate("reviews").populate("owner");
+    console.log(listing);
     if(!listing){
         req.flash("error",  " Listing you requested for does not exits ");
         res.redirect("/listings");

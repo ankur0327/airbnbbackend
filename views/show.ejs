@@ -16,11 +16,11 @@
         <img src="<%= listing.image.url %>" class="card-img-top show-img" alt="listingimage">
 
         <div class="card-body">
-          <p class="card-text"> <b>Name: &nbsp;</b><%= listing.owner.username %></p>
-          <p class="card-text"><b>Description : </b><%= listing.description %></p>
+          <p class="card-text"> <b>Name: &nbsp;</b><%=listing.owner.username %></p>
+          <p class="card-text"><b>Description : </b><%=listing.description %></p>
           <p class="card-text"><b>Price : &nbsp;</b>&#8377;<%=listing.price.toLocaleString("en-IN") %></p>
-          <p class="card-text"><b>Location : &nbsp;</b><%= listing.location %></p>
-          <p class="card-text"><b>Country : &nbsp;</b><%= listing.country %></p>
+          <p class="card-text"><b>Location : &nbsp;</b><%=listing.location %></p>
+          <p class="card-text"><b>Country : &nbsp;</b><%=listing.country %></p>
         
        <% if(currUser && currUser._id.equals(listing.owner._id)) { %> 
      <div class="btns">
